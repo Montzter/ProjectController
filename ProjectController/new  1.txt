@@ -1,0 +1,22 @@
+usefull Qt functions:
+
+#include <QApplication>
+#include <QtWidgets>
+#include <QTCore>
+
+setCentralWidget(ui->plainTextEdit);
+
+#include <QDebug>
+#include <QDir>
+QDir mDir("E:/USER/Ben/My Documents/QtTuts/Dirs");
+qDebug() << mDir.exists();
+
+//Output drives to debug
+    QDir mDir;
+    foreach(QFileInfo mItm, mDir.drives())
+    {
+        qDebug() << mItm.absoluteFilePath();
+    }
+	
+#include <QString>
+QString mPath = "E:/USER/Ben/MyDocuments/QtTuts/ZZZ";
