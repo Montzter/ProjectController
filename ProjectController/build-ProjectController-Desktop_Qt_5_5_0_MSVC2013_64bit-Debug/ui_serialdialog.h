@@ -27,26 +27,26 @@ QT_BEGIN_NAMESPACE
 class Ui_serialDialog
 {
 public:
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QLabel *portLabel;
     QComboBox *comPorts;
     QHBoxLayout *horizontalLayout_2;
     QLabel *baudLabel;
-    QComboBox *comboBox;
+    QComboBox *baudCombo;
     QHBoxLayout *horizontalLayout_3;
     QLabel *dataLabel;
-    QComboBox *comboBox_2;
+    QComboBox *dataCombo;
     QHBoxLayout *horizontalLayout_4;
     QLabel *parityLabel;
-    QComboBox *comboBox_3;
+    QComboBox *parityCombo;
     QHBoxLayout *horizontalLayout_5;
     QLabel *stopLabel;
-    QComboBox *comboBox_4;
+    QComboBox *stopbitCombo;
     QHBoxLayout *horizontalLayout_6;
     QLabel *flowLabel;
-    QComboBox *comboBox_5;
+    QComboBox *flowCombo;
     QHBoxLayout *horizontalLayout_7;
     QPushButton *connectButton;
     QPushButton *cancelButton;
@@ -63,20 +63,20 @@ public:
         serialDialog->setSizePolicy(sizePolicy);
         serialDialog->setMinimumSize(QSize(201, 222));
         serialDialog->setMaximumSize(QSize(201, 222));
-        widget = new QWidget(serialDialog);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(20, 10, 160, 195));
-        verticalLayout = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(serialDialog);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(20, 10, 160, 195));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        portLabel = new QLabel(widget);
+        portLabel = new QLabel(layoutWidget);
         portLabel->setObjectName(QStringLiteral("portLabel"));
 
         horizontalLayout->addWidget(portLabel);
 
-        comPorts = new QComboBox(widget);
+        comPorts = new QComboBox(layoutWidget);
         comPorts->setObjectName(QStringLiteral("comPorts"));
 
         horizontalLayout->addWidget(comPorts);
@@ -86,87 +86,87 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        baudLabel = new QLabel(widget);
+        baudLabel = new QLabel(layoutWidget);
         baudLabel->setObjectName(QStringLiteral("baudLabel"));
 
         horizontalLayout_2->addWidget(baudLabel);
 
-        comboBox = new QComboBox(widget);
-        comboBox->setObjectName(QStringLiteral("comboBox"));
+        baudCombo = new QComboBox(layoutWidget);
+        baudCombo->setObjectName(QStringLiteral("baudCombo"));
 
-        horizontalLayout_2->addWidget(comboBox);
+        horizontalLayout_2->addWidget(baudCombo);
 
 
         verticalLayout->addLayout(horizontalLayout_2);
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        dataLabel = new QLabel(widget);
+        dataLabel = new QLabel(layoutWidget);
         dataLabel->setObjectName(QStringLiteral("dataLabel"));
 
         horizontalLayout_3->addWidget(dataLabel);
 
-        comboBox_2 = new QComboBox(widget);
-        comboBox_2->setObjectName(QStringLiteral("comboBox_2"));
+        dataCombo = new QComboBox(layoutWidget);
+        dataCombo->setObjectName(QStringLiteral("dataCombo"));
 
-        horizontalLayout_3->addWidget(comboBox_2);
+        horizontalLayout_3->addWidget(dataCombo);
 
 
         verticalLayout->addLayout(horizontalLayout_3);
 
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
-        parityLabel = new QLabel(widget);
+        parityLabel = new QLabel(layoutWidget);
         parityLabel->setObjectName(QStringLiteral("parityLabel"));
 
         horizontalLayout_4->addWidget(parityLabel);
 
-        comboBox_3 = new QComboBox(widget);
-        comboBox_3->setObjectName(QStringLiteral("comboBox_3"));
+        parityCombo = new QComboBox(layoutWidget);
+        parityCombo->setObjectName(QStringLiteral("parityCombo"));
 
-        horizontalLayout_4->addWidget(comboBox_3);
+        horizontalLayout_4->addWidget(parityCombo);
 
 
         verticalLayout->addLayout(horizontalLayout_4);
 
         horizontalLayout_5 = new QHBoxLayout();
         horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
-        stopLabel = new QLabel(widget);
+        stopLabel = new QLabel(layoutWidget);
         stopLabel->setObjectName(QStringLiteral("stopLabel"));
 
         horizontalLayout_5->addWidget(stopLabel);
 
-        comboBox_4 = new QComboBox(widget);
-        comboBox_4->setObjectName(QStringLiteral("comboBox_4"));
+        stopbitCombo = new QComboBox(layoutWidget);
+        stopbitCombo->setObjectName(QStringLiteral("stopbitCombo"));
 
-        horizontalLayout_5->addWidget(comboBox_4);
+        horizontalLayout_5->addWidget(stopbitCombo);
 
 
         verticalLayout->addLayout(horizontalLayout_5);
 
         horizontalLayout_6 = new QHBoxLayout();
         horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
-        flowLabel = new QLabel(widget);
+        flowLabel = new QLabel(layoutWidget);
         flowLabel->setObjectName(QStringLiteral("flowLabel"));
 
         horizontalLayout_6->addWidget(flowLabel);
 
-        comboBox_5 = new QComboBox(widget);
-        comboBox_5->setObjectName(QStringLiteral("comboBox_5"));
+        flowCombo = new QComboBox(layoutWidget);
+        flowCombo->setObjectName(QStringLiteral("flowCombo"));
 
-        horizontalLayout_6->addWidget(comboBox_5);
+        horizontalLayout_6->addWidget(flowCombo);
 
 
         verticalLayout->addLayout(horizontalLayout_6);
 
         horizontalLayout_7 = new QHBoxLayout();
         horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
-        connectButton = new QPushButton(widget);
+        connectButton = new QPushButton(layoutWidget);
         connectButton->setObjectName(QStringLiteral("connectButton"));
 
         horizontalLayout_7->addWidget(connectButton);
 
-        cancelButton = new QPushButton(widget);
+        cancelButton = new QPushButton(layoutWidget);
         cancelButton->setObjectName(QStringLiteral("cancelButton"));
 
         horizontalLayout_7->addWidget(cancelButton);
@@ -185,33 +185,28 @@ public:
         serialDialog->setWindowTitle(QApplication::translate("serialDialog", "Dialog", 0));
         portLabel->setText(QApplication::translate("serialDialog", "Port:", 0));
         baudLabel->setText(QApplication::translate("serialDialog", "Baud rate:", 0));
-        comboBox->clear();
-        comboBox->insertItems(0, QStringList()
-         << QApplication::translate("serialDialog", "110", 0)
-         << QApplication::translate("serialDialog", "300", 0)
-         << QApplication::translate("serialDialog", "600", 0)
+        baudCombo->clear();
+        baudCombo->insertItems(0, QStringList()
          << QApplication::translate("serialDialog", "1200", 0)
          << QApplication::translate("serialDialog", "2400", 0)
          << QApplication::translate("serialDialog", "4800", 0)
          << QApplication::translate("serialDialog", "9600", 0)
-         << QApplication::translate("serialDialog", "14400", 0)
          << QApplication::translate("serialDialog", "19200", 0)
          << QApplication::translate("serialDialog", "38400", 0)
          << QApplication::translate("serialDialog", "57600", 0)
          << QApplication::translate("serialDialog", "115200", 0)
-         << QApplication::translate("serialDialog", "230400", 0)
-         << QApplication::translate("serialDialog", "460800", 0)
-         << QApplication::translate("serialDialog", "921600", 0)
         );
         dataLabel->setText(QApplication::translate("serialDialog", "Data:", 0));
-        comboBox_2->clear();
-        comboBox_2->insertItems(0, QStringList()
+        dataCombo->clear();
+        dataCombo->insertItems(0, QStringList()
+         << QApplication::translate("serialDialog", "5 bit", 0)
+         << QApplication::translate("serialDialog", "6 bit", 0)
          << QApplication::translate("serialDialog", "7 bit", 0)
          << QApplication::translate("serialDialog", "8 bit", 0)
         );
         parityLabel->setText(QApplication::translate("serialDialog", "Parity:", 0));
-        comboBox_3->clear();
-        comboBox_3->insertItems(0, QStringList()
+        parityCombo->clear();
+        parityCombo->insertItems(0, QStringList()
          << QApplication::translate("serialDialog", "none", 0)
          << QApplication::translate("serialDialog", "odd", 0)
          << QApplication::translate("serialDialog", "even", 0)
@@ -219,15 +214,15 @@ public:
          << QApplication::translate("serialDialog", "space", 0)
         );
         stopLabel->setText(QApplication::translate("serialDialog", "Stop:", 0));
-        comboBox_4->clear();
-        comboBox_4->insertItems(0, QStringList()
+        stopbitCombo->clear();
+        stopbitCombo->insertItems(0, QStringList()
          << QApplication::translate("serialDialog", "1 bit", 0)
          << QApplication::translate("serialDialog", "1.5 bit", 0)
          << QApplication::translate("serialDialog", "2 bit", 0)
         );
         flowLabel->setText(QApplication::translate("serialDialog", "Flow Control:", 0));
-        comboBox_5->clear();
-        comboBox_5->insertItems(0, QStringList()
+        flowCombo->clear();
+        flowCombo->insertItems(0, QStringList()
          << QApplication::translate("serialDialog", "Xon/Xoff", 0)
          << QApplication::translate("serialDialog", "hardware", 0)
          << QApplication::translate("serialDialog", "none", 0)

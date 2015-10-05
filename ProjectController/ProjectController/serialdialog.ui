@@ -31,7 +31,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -65,22 +65,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QComboBox" name="comboBox">
-        <item>
-         <property name="text">
-          <string>110</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>300</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>600</string>
-         </property>
-        </item>
+       <widget class="QComboBox" name="baudCombo">
         <item>
          <property name="text">
           <string>1200</string>
@@ -103,11 +88,6 @@
         </item>
         <item>
          <property name="text">
-          <string>14400</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
           <string>19200</string>
          </property>
         </item>
@@ -126,21 +106,6 @@
           <string>115200</string>
          </property>
         </item>
-        <item>
-         <property name="text">
-          <string>230400</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>460800</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>921600</string>
-         </property>
-        </item>
        </widget>
       </item>
      </layout>
@@ -155,7 +120,17 @@
        </widget>
       </item>
       <item>
-       <widget class="QComboBox" name="comboBox_2">
+       <widget class="QComboBox" name="dataCombo">
+        <item>
+         <property name="text">
+          <string>5 bit</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>6 bit</string>
+         </property>
+        </item>
         <item>
          <property name="text">
           <string>7 bit</string>
@@ -180,7 +155,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QComboBox" name="comboBox_3">
+       <widget class="QComboBox" name="parityCombo">
         <item>
          <property name="text">
           <string>none</string>
@@ -220,7 +195,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QComboBox" name="comboBox_4">
+       <widget class="QComboBox" name="stopbitCombo">
         <item>
          <property name="text">
           <string>1 bit</string>
@@ -250,7 +225,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QComboBox" name="comboBox_5">
+       <widget class="QComboBox" name="flowCombo">
         <item>
          <property name="text">
           <string>Xon/Xoff</string>

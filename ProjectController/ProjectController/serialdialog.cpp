@@ -3,13 +3,14 @@
 #include <QSerialPortInfo>
 #include <QSerialPort>
 #include <QDebug>
-serialDialog::serialDialog(QWidget *parent, QSerialPort *serial) :
+
+serialDialog::serialDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::serialDialog)
 {
-    ui->setupUi(this);
+    //parent->
 
-    int comPortIndex = 0;
+    ui->setupUi(this);
 
     foreach( const QSerialPortInfo &info, QSerialPortInfo::availablePorts()){
         if(info.isBusy())
@@ -24,6 +25,14 @@ serialDialog::serialDialog(QWidget *parent, QSerialPort *serial) :
             qDebug() << (info.portName()) << " is not busy";
         }
     }
+
+    /*qDebug() << ui->comPorts->currentText();
+    qDebug() << ui->baudCombo->currentText();
+    qDebug() << ui->dataCombo->currentText();
+    qDebug() << ui->parityCombo->currentText();
+    qDebug() << ui->stopbitCombo->currentText();
+    qDebug() << ui->flowCombo->currentText();
+*/
 }
 
 serialDialog::~serialDialog()
@@ -31,9 +40,49 @@ serialDialog::~serialDialog()
     delete ui;
 }
 
-
 void serialDialog::on_cancelButton_clicked()
 {
-    close();
+    QDialog::reject();//close();
 }
+
+void serialDialog::on_connectButton_clicked()
+{
+    QDialog::accept();
+}
+
+QString serialDialog::getPortName(){
+    QString portName = ui->comPorts->currentText();
+    return portName;
+}
+
+QString serialDialog::getBaudRate(){
+    QString BaudRate = ui->baudCombo->currentText();
+    return BaudRate;
+}
+
+QString serialDialog::getDataWidth(){
+    QString DataWidth = ui->dataCombo->currentText();
+    return DataWidth;
+}
+
+QString serialDialog::getParity(){
+    QString Parity = ui->parityCombo->currentText();
+    return Parity;
+}
+
+QString serialDialog::getStopBits(){
+    QString StopBits = ui->stopbitCombo->currentText();
+    return StopBits;
+}
+
+QString serialDialog::getFlowControl(){
+    QString FlowControl = ui->flowCombo->currentText();
+    return FlowControl;
+}
+
+
+
+
+
+
 
