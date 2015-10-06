@@ -38,7 +38,7 @@ serialDialog::~serialDialog()
 
 void serialDialog::on_cancelButton_clicked()
 {
-    QDialog::reject();//close();
+    QDialog::reject();
 }
 
 void serialDialog::on_connectButton_clicked()

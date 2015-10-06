@@ -15,13 +15,16 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    serialdialog.cpp
+    serialdialog.cpp \
+    serialportdisplay.cpp
 
 HEADERS  += mainwindow.h \
-    serialdialog.h
+    serialdialog.h \
+    serialportdisplay.h
 
 FORMS    += mainwindow.ui \
-    serialdialog.ui
+    serialdialog.ui \
+    serialportdisplay.ui
 
 RESOURCES += \
     res.qrc

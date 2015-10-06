@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
+    <width>402</width>
     <height>300</height>
    </rect>
   </property>
@@ -25,7 +25,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>400</width>
+     <width>402</width>
      <height>21</height>
     </rect>
    </property>
@@ -34,6 +34,7 @@
      <string>File</string>
     </property>
     <addaction name="actionSerial_Port"/>
+    <addaction name="actionDisplay_Serial_Data"/>
     <addaction name="actionDisconnect"/>
     <addaction name="actionClose"/>
    </widget>
@@ -48,6 +49,7 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionSerial_Port"/>
+   <addaction name="actionDisplay_Serial_Data"/>
    <addaction name="actionDisconnect"/>
   </widget>
   <action name="actionSerial_Port">
@@ -75,6 +77,15 @@
    </property>
    <property name="text">
     <string>Disconnect</string>
+   </property>
+  </action>
+  <action name="actionDisplay_Serial_Data">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/icons/icons/SerialDisplay.ico</normaloff>:/icons/icons/SerialDisplay.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Display Serial Data</string>
    </property>
   </action>
  </widget>

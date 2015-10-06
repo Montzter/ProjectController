@@ -7,5 +7,6 @@
         <file>icons/Disconnect.ico</file>
         <file>icons/PCblur.ico</file>
         <file>icons/PCblur2.ico</file>
+        <file>icons/SerialDisplay.ico</file>
     </qresource>
 </RCC>
