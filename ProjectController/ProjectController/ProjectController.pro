@@ -22,3 +22,6 @@ HEADERS  += mainwindow.h \
 
 FORMS    += mainwindow.ui \
     serialdialog.ui
+
+RESOURCES += \
+    res.qrc

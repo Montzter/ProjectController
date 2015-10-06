@@ -28,21 +28,34 @@ class Ui_MainWindow
 public:
     QAction *actionSerial_Port;
     QAction *actionClose;
+    QAction *actionDisconnect;
     QWidget *centralWidget;
     QMenuBar *menuBar;
     QMenu *menuFile;
-    QToolBar *mainToolBar;
     QStatusBar *statusBar;
+    QToolBar *mainToolBar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(400, 300);
+        MainWindow->setIconSize(QSize(24, 24));
         actionSerial_Port = new QAction(MainWindow);
         actionSerial_Port->setObjectName(QStringLiteral("actionSerial_Port"));
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/icons/icons/Serial.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        actionSerial_Port->setIcon(icon);
         actionClose = new QAction(MainWindow);
         actionClose->setObjectName(QStringLiteral("actionClose"));
+        QIcon icon1;
+        icon1.addFile(QStringLiteral(":/icons/icons/Close.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        actionClose->setIcon(icon1);
+        actionDisconnect = new QAction(MainWindow);
+        actionDisconnect->setObjectName(QStringLiteral("actionDisconnect"));
+        QIcon icon2;
+        icon2.addFile(QStringLiteral(":/icons/icons/Disconnect.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        actionDisconnect->setIcon(icon2);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         MainWindow->setCentralWidget(centralWidget);
@@ -52,16 +65,19 @@ public:
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
         MainWindow->setMenuBar(menuBar);
-        mainToolBar = new QToolBar(MainWindow);
-        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
-        MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         MainWindow->setStatusBar(statusBar);
+        mainToolBar = new QToolBar(MainWindow);
+        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
+        MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
 
         menuBar->addAction(menuFile->menuAction());
         menuFile->addAction(actionSerial_Port);
+        menuFile->addAction(actionDisconnect);
         menuFile->addAction(actionClose);
+        mainToolBar->addAction(actionSerial_Port);
+        mainToolBar->addAction(actionDisconnect);
 
         retranslateUi(MainWindow);
 
@@ -73,6 +89,7 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
         actionSerial_Port->setText(QApplication::translate("MainWindow", "Serial Port", 0));
         actionClose->setText(QApplication::translate("MainWindow", "Close", 0));
+        actionDisconnect->setText(QApplication::translate("MainWindow", "Disconnect", 0));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", 0));
     } // retranslateUi
 

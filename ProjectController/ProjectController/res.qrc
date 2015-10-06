@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>icons/PC.ico</file>
+        <file>icons/Serial.ico</file>
+        <file>icons/Close.ico</file>
+        <file>icons/Connect.ico</file>
+        <file>icons/Disconnect.ico</file>
+        <file>icons/PCblur.ico</file>
+        <file>icons/PCblur2.ico</file>
+    </qresource>
+</RCC>

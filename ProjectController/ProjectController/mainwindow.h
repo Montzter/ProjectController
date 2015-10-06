@@ -4,8 +4,6 @@
 #include <QMainWindow>
 #include <QSerialPort>
 
-
-
 namespace Ui {
 class MainWindow;
 }
@@ -16,6 +14,13 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
+    void setupSerial(QString portName, QString Baud, QString DataW, QString Parity, QString StopBits, QString FlowControl);
+    void setPortName(QString portName);
+    void setBaudRate(QString Baud);
+    void setDataWidth(QString DataW);
+    void setParity(QString Parity);
+    void setStopBits(QString StopBits);
+    void setFlowControl(QString FlowControl);
     ~MainWindow();
 
 private slots:
@@ -23,20 +28,11 @@ private slots:
 
     void on_actionClose_triggered();
 
+    void on_actionDisconnect_triggered();
+
 private:
     Ui::MainWindow *ui;
 };
 
 #endif // MAINWINDOW_H
 
-/*
-*.setPortName("com4")
-*.setBaudRate(QSerialPort::Baud9600);
-*.setDataBits(QSerialPort::Data8);
-*.setParity(QSerialPort::NoParity);
-*.setStopBits(QSerialPort::OneStop);
-*.setFlowControl(QSerialPort::NoFlowControl);
-.open(QIODevice::ReadWrite);
-.write("ok");
-
-*/

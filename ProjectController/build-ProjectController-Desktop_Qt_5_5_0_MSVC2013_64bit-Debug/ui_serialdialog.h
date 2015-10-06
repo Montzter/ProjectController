@@ -15,19 +15,19 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QVBoxLayout>
-#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_serialDialog
 {
 public:
-    QWidget *layoutWidget;
+    QGridLayout *gridLayout;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QLabel *portLabel;
@@ -55,28 +55,26 @@ public:
     {
         if (serialDialog->objectName().isEmpty())
             serialDialog->setObjectName(QStringLiteral("serialDialog"));
-        serialDialog->resize(201, 222);
+        serialDialog->resize(201, 213);
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(serialDialog->sizePolicy().hasHeightForWidth());
         serialDialog->setSizePolicy(sizePolicy);
-        serialDialog->setMinimumSize(QSize(201, 222));
-        serialDialog->setMaximumSize(QSize(201, 222));
-        layoutWidget = new QWidget(serialDialog);
-        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(20, 10, 160, 195));
-        verticalLayout = new QVBoxLayout(layoutWidget);
+        serialDialog->setMinimumSize(QSize(201, 213));
+        serialDialog->setMaximumSize(QSize(201, 213));
+        gridLayout = new QGridLayout(serialDialog);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        portLabel = new QLabel(layoutWidget);
+        portLabel = new QLabel(serialDialog);
         portLabel->setObjectName(QStringLiteral("portLabel"));
 
         horizontalLayout->addWidget(portLabel);
 
-        comPorts = new QComboBox(layoutWidget);
+        comPorts = new QComboBox(serialDialog);
         comPorts->setObjectName(QStringLiteral("comPorts"));
 
         horizontalLayout->addWidget(comPorts);
@@ -86,12 +84,12 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        baudLabel = new QLabel(layoutWidget);
+        baudLabel = new QLabel(serialDialog);
         baudLabel->setObjectName(QStringLiteral("baudLabel"));
 
         horizontalLayout_2->addWidget(baudLabel);
 
-        baudCombo = new QComboBox(layoutWidget);
+        baudCombo = new QComboBox(serialDialog);
         baudCombo->setObjectName(QStringLiteral("baudCombo"));
 
         horizontalLayout_2->addWidget(baudCombo);
@@ -101,12 +99,12 @@ public:
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        dataLabel = new QLabel(layoutWidget);
+        dataLabel = new QLabel(serialDialog);
         dataLabel->setObjectName(QStringLiteral("dataLabel"));
 
         horizontalLayout_3->addWidget(dataLabel);
 
-        dataCombo = new QComboBox(layoutWidget);
+        dataCombo = new QComboBox(serialDialog);
         dataCombo->setObjectName(QStringLiteral("dataCombo"));
 
         horizontalLayout_3->addWidget(dataCombo);
@@ -116,12 +114,12 @@ public:
 
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
-        parityLabel = new QLabel(layoutWidget);
+        parityLabel = new QLabel(serialDialog);
         parityLabel->setObjectName(QStringLiteral("parityLabel"));
 
         horizontalLayout_4->addWidget(parityLabel);
 
-        parityCombo = new QComboBox(layoutWidget);
+        parityCombo = new QComboBox(serialDialog);
         parityCombo->setObjectName(QStringLiteral("parityCombo"));
 
         horizontalLayout_4->addWidget(parityCombo);
@@ -131,12 +129,12 @@ public:
 
         horizontalLayout_5 = new QHBoxLayout();
         horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
-        stopLabel = new QLabel(layoutWidget);
+        stopLabel = new QLabel(serialDialog);
         stopLabel->setObjectName(QStringLiteral("stopLabel"));
 
         horizontalLayout_5->addWidget(stopLabel);
 
-        stopbitCombo = new QComboBox(layoutWidget);
+        stopbitCombo = new QComboBox(serialDialog);
         stopbitCombo->setObjectName(QStringLiteral("stopbitCombo"));
 
         horizontalLayout_5->addWidget(stopbitCombo);
@@ -146,12 +144,12 @@ public:
 
         horizontalLayout_6 = new QHBoxLayout();
         horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
-        flowLabel = new QLabel(layoutWidget);
+        flowLabel = new QLabel(serialDialog);
         flowLabel->setObjectName(QStringLiteral("flowLabel"));
 
         horizontalLayout_6->addWidget(flowLabel);
 
-        flowCombo = new QComboBox(layoutWidget);
+        flowCombo = new QComboBox(serialDialog);
         flowCombo->setObjectName(QStringLiteral("flowCombo"));
 
         horizontalLayout_6->addWidget(flowCombo);
@@ -161,18 +159,21 @@ public:
 
         horizontalLayout_7 = new QHBoxLayout();
         horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
-        connectButton = new QPushButton(layoutWidget);
+        connectButton = new QPushButton(serialDialog);
         connectButton->setObjectName(QStringLiteral("connectButton"));
 
         horizontalLayout_7->addWidget(connectButton);
 
-        cancelButton = new QPushButton(layoutWidget);
+        cancelButton = new QPushButton(serialDialog);
         cancelButton->setObjectName(QStringLiteral("cancelButton"));
 
         horizontalLayout_7->addWidget(cancelButton);
 
 
         verticalLayout->addLayout(horizontalLayout_7);
+
+
+        gridLayout->addLayout(verticalLayout, 0, 0, 1, 1);
 
 
         retranslateUi(serialDialog);

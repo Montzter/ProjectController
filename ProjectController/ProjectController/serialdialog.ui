@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>201</width>
-    <height>222</height>
+    <height>213</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,252 +19,246 @@
   <property name="minimumSize">
    <size>
     <width>201</width>
-    <height>222</height>
+    <height>213</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>201</width>
-    <height>222</height>
+    <height>213</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>10</y>
-     <width>160</width>
-     <height>195</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QLabel" name="portLabel">
-        <property name="text">
-         <string>Port:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QComboBox" name="comPorts"/>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <item>
-       <widget class="QLabel" name="baudLabel">
-        <property name="text">
-         <string>Baud rate:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QComboBox" name="baudCombo">
-        <item>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="portLabel">
          <property name="text">
-          <string>1200</string>
+          <string>Port:</string>
          </property>
-        </item>
-        <item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comPorts"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLabel" name="baudLabel">
          <property name="text">
-          <string>2400</string>
+          <string>Baud rate:</string>
          </property>
-        </item>
-        <item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="baudCombo">
+         <item>
+          <property name="text">
+           <string>1200</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>2400</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>4800</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>9600</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>19200</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>38400</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>57600</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>115200</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QLabel" name="dataLabel">
          <property name="text">
-          <string>4800</string>
+          <string>Data:</string>
          </property>
-        </item>
-        <item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="dataCombo">
+         <item>
+          <property name="text">
+           <string>5 bit</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>6 bit</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>7 bit</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>8 bit</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <widget class="QLabel" name="parityLabel">
          <property name="text">
-          <string>9600</string>
+          <string>Parity:</string>
          </property>
-        </item>
-        <item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="parityCombo">
+         <item>
+          <property name="text">
+           <string>none</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>odd</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>even</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>mark</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>space</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_5">
+       <item>
+        <widget class="QLabel" name="stopLabel">
          <property name="text">
-          <string>19200</string>
+          <string>Stop:</string>
          </property>
-        </item>
-        <item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="stopbitCombo">
+         <item>
+          <property name="text">
+           <string>1 bit</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>1.5 bit</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>2 bit</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_6">
+       <item>
+        <widget class="QLabel" name="flowLabel">
          <property name="text">
-          <string>38400</string>
+          <string>Flow Control:</string>
          </property>
-        </item>
-        <item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="flowCombo">
+         <item>
+          <property name="text">
+           <string>Xon/Xoff</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>hardware</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>none</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_7">
+       <item>
+        <widget class="QPushButton" name="connectButton">
          <property name="text">
-          <string>57600</string>
+          <string>Connect</string>
          </property>
-        </item>
-        <item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="cancelButton">
          <property name="text">
-          <string>115200</string>
+          <string>Cancel</string>
          </property>
-        </item>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_3">
-      <item>
-       <widget class="QLabel" name="dataLabel">
-        <property name="text">
-         <string>Data:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QComboBox" name="dataCombo">
-        <item>
-         <property name="text">
-          <string>5 bit</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>6 bit</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>7 bit</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>8 bit</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_4">
-      <item>
-       <widget class="QLabel" name="parityLabel">
-        <property name="text">
-         <string>Parity:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QComboBox" name="parityCombo">
-        <item>
-         <property name="text">
-          <string>none</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>odd</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>even</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>mark</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>space</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_5">
-      <item>
-       <widget class="QLabel" name="stopLabel">
-        <property name="text">
-         <string>Stop:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QComboBox" name="stopbitCombo">
-        <item>
-         <property name="text">
-          <string>1 bit</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>1.5 bit</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>2 bit</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_6">
-      <item>
-       <widget class="QLabel" name="flowLabel">
-        <property name="text">
-         <string>Flow Control:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QComboBox" name="flowCombo">
-        <item>
-         <property name="text">
-          <string>Xon/Xoff</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>hardware</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>none</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_7">
-      <item>
-       <widget class="QPushButton" name="connectButton">
-        <property name="text">
-         <string>Connect</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="cancelButton">
-        <property name="text">
-         <string>Cancel</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-   </layout>
-  </widget>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

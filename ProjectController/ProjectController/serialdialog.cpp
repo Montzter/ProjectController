@@ -4,35 +4,31 @@
 #include <QSerialPort>
 #include <QDebug>
 
+
 serialDialog::serialDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::serialDialog)
 {
-    //parent->
-
     ui->setupUi(this);
+
+    ui->connectButton->setIcon(QIcon(":/icons/icons/Connect.ico"));
+
+    ui->baudCombo->setCurrentIndex(3);
+    ui->dataCombo->setCurrentIndex(3);
+    ui->flowCombo->setCurrentIndex(2);
 
     foreach( const QSerialPortInfo &info, QSerialPortInfo::availablePorts()){
         if(info.isBusy())
         {
-            qDebug() << ui->comPorts->count()+1;
             qDebug() << (info.portName()) << " is busy";
         }
         else
         {
-            qDebug() << ui->comPorts->count()+1;
             ui->comPorts->addItem(info.portName());
             qDebug() << (info.portName()) << " is not busy";
         }
     }
 
-    /*qDebug() << ui->comPorts->currentText();
-    qDebug() << ui->baudCombo->currentText();
-    qDebug() << ui->dataCombo->currentText();
-    qDebug() << ui->parityCombo->currentText();
-    qDebug() << ui->stopbitCombo->currentText();
-    qDebug() << ui->flowCombo->currentText();
-*/
 }
 
 serialDialog::~serialDialog()
