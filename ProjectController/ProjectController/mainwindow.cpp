@@ -6,14 +6,29 @@
 #include <QString>
 #include <QDebug>
 #include <QSerialPort>
+#include <QFileDialog>
+#include <QFile>
+#include <QTextStream>
+#include <QStringList>
+#include <QTabWidget>
+#include <QWidget>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QLineEdit>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    //QWidget cWidg;
+    //QVBoxLayout vlayout;
+
     serial = new QSerialPort;
     sDisplay = new SerialPortDisplay(this);
     sDisplay->setWindowIcon(QIcon(":/icons/icons/SerialDisplay.ico"));
+
+
     ui->setupUi(this);
     ui->statusBar->showMessage("Connect Serial Port");
     ui->actionSerial_Port->setEnabled(true);
@@ -62,7 +77,7 @@ void MainWindow::on_actionSerial_Port_triggered()
         serial->open(QIODevice::ReadWrite);
 
 
-        sendQString("<Driver><Name>Camera</Name><ID>1</ID></Driver>");
+        sendQString("Read:all;Read:1;Write:2:false;Write:3:8;Do:1");
         /*
         QByteArray txWrite = "<Driver><Name>Camera</Name><ID>1</ID></Driver>";
         serial->write(txWrite);
@@ -244,4 +259,117 @@ void MainWindow::sendQString(QString text){
 
 void MainWindow::serialdisplayClosed(){
     ui->actionDisplay_Serial_Data->setEnabled(true);
+}
+
+void MainWindow::on_actionLoad_Setup_File_triggered()
+{
+    setupFile = new QString;
+    *setupFile = QFileDialog::getOpenFileName(this,tr("Open File"),"./setup","layout Files (*.layout)");
+    qDebug() << *setupFile;
+
+    if(*setupFile == ""){
+        qDebug() << "Cancelled";
+    }
+    else{
+        //Open file and readAll into fileString then close file
+        qDebug() <<"Opening File";
+        QFile file(*setupFile);
+        file.open(QIODevice::ReadOnly);
+        QTextStream in(&file);
+        QString fileString = in.readAll();
+        file.close();
+
+
+        //cut out extra chars
+        fileString = fileString.replace("\r","");
+        fileString = fileString.replace("\n","");
+        fileString = fileString.replace("\t","");
+
+        //cut out everything outside of <Setup>...</Setup>
+        int start = fileString.indexOf("<Setup>") + 7;
+        int end = fileString.indexOf("</Setup>");
+        fileString = fileString.mid(start,end-start);
+
+
+
+        QString startStr="<Driver>";
+        QString endStr = "</Driver>";
+        QString resultStr;
+        qDebug() << "Test" << fileString.indexOf(endStr);
+        getBetweenTags(2,&fileString,&startStr,&endStr, &resultStr);
+        //qDebug() << fileString;
+        //qDebug() << resultStr;
+
+        //getQStringBetweenQStrings(string, front, back)
+        //QStringList fileSList = fileString.split("<Driver>");
+        //fileSList.replaceInStrings("\r","");
+        //fileSList.replaceInStrings("\n","");
+        //fileSList.replaceInStrings("\t","");
+        //qDebug() << fileSList;
+
+
+        //Count # of drivers
+        //int numDrivers = fileString.count("<Driver>");
+        //qDebug() << "There are" << numDrivers << "drivers." << endl;
+
+
+        //for( int i=0; i< numDrivers; ++i)
+        //{
+        //    qDebug() << "Driver " << i+1 << "." << endl;
+
+        //}
+        //int driverStart = 0;
+        //int driverEnd = 0;
+        //while((driverStart = fileString.indexOf("<Driver>",driverStart)) != -1){
+        //    qDebug() << "Found <Driver> tag at index position " << driverStart << endl;
+        //    fileString.chop(driverStart)
+        //    driverStart++;
+        //}
+        //qDebug() << endl << fileString;
+
+
+    }
+}
+
+void MainWindow::getBetweenTags(int instance, QString *string, QString *front, QString *back, QString *result){
+    qDebug() << "front" << *front;
+    int instances = string->count(front);
+    int lengthFront = front->length();
+
+    if(instances < instance){
+        qDebug() << "instance requested not in file";
+    }
+    else{
+        int curInst = 0;
+        int indexFront = string->indexOf(front);
+        curInst++;
+        qDebug() << "First Instance of" << *front << "is at index" << indexFront;
+
+        while(curInst < instance){
+            indexFront = string->indexOf(front,indexFront+1);
+            curInst++;
+        }
+
+        qDebug() << instance << "Instance of" << *front << "is at index" <<indexFront;
+        qDebug() << string->right(indexFront);
+        qDebug() << endl;
+
+
+        //int indexFront = front->indexOf(front)+lengthFront;
+        //int indexBack = back->indexOf(back);
+        //int lengthResult = indexBack - indexFront;
+
+
+        //*result = string->mid(indexFront,lengthResult);
+    }
+}
+
+void MainWindow::on_radioLive_clicked()
+{
+    ui->submitButton->setEnabled(false);
+}
+
+void MainWindow::on_radioOnSubmit_clicked()
+{
+    ui->submitButton->setEnabled(true);
 }

@@ -5,6 +5,11 @@
 #include <QSerialPort>
 #include <serialdialog.h>
 #include <serialportdisplay.h>
+#include <QString>
+#include <QTabWidget>
+#include <QWidget>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
 
 namespace Ui {
 class MainWindow;
@@ -24,6 +29,7 @@ public:
     void setStopBits(QString StopBits);
     void setFlowControl(QString FlowControl);
     void sendQString(QString text);
+    void getBetweenTags(int instance, QString *string, QString *front, QString *back, QString *result);
     ~MainWindow();
 
 private slots:
@@ -39,11 +45,18 @@ private slots:
 
     void on_actionDisplay_Serial_Data_triggered();
 
+    void on_actionLoad_Setup_File_triggered();
+
+    void on_radioLive_clicked();
+
+    void on_radioOnSubmit_clicked();
+
 private:
     Ui::MainWindow *ui;
     serialDialog *sDialog;
     SerialPortDisplay *sDisplay;
     QSerialPort *serial;
+    QString *setupFile;
 };
 
 #endif // MAINWINDOW_H

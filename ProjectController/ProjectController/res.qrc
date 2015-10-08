@@ -8,5 +8,6 @@
         <file>icons/PCblur.ico</file>
         <file>icons/PCblur2.ico</file>
         <file>icons/SerialDisplay.ico</file>
+        <file>icons/Layout.ico</file>
     </qresource>
 </RCC>

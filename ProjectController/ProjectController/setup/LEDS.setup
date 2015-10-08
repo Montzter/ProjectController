@@ -1,0 +1,42 @@
+<Setup>
+<Driver>
+	<Name>
+		GREEN_LEDS;
+	</Name>
+	<Registers>
+		1:GREEN_LED_1:boolean:RW:false;
+		2:GREEN_LED_2:boolean:RW:false;
+		3:GREEN_LED_3:boolean:RW:false;
+		4:GREEN_LED_4:boolean:RW:false;
+		5:GREEN_LED_5:boolean:RW:false;
+		6:GREEN_LED_6:boolean:RW:false;
+		7:GREEN_LED_7:boolean:RW:false;
+		8:GREEN_LED_8:boolean:RW:false;
+	</Registers>
+	<Functions>
+		F1:ALL_ON;
+		F2:ALL_OFF;
+		F3:INVERT;
+	</Functions>
+</Driver>
+<Driver>
+	<Name>
+		RED_LEDS;
+	</Name>
+	<Registers>
+		1:RED_LED_1:boolean:RW:false;
+		2:RED_LED_1:boolean:RW:false;
+		3:RED_LED_1:boolean:RW:false;
+		4:RED_LED_1:boolean:RW:false;
+		5:RED_LED_1:boolean:RW:false;
+		6:RED_LED_1:boolean:RW:false;
+		7:RED_LED_1:boolean:RW:false;
+		8:RED_LED_1:boolean:RW:false;	
+	</Registers>
+	<Functions>
+		F4:ALL_ON;
+		F5:ALL_OFF;
+		F6:INVERT;
+	</Functions>
+</Driver>
+</Setup>
